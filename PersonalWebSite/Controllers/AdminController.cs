@@ -68,5 +68,13 @@ namespace PersonalWebSite.Controllers
             context.SaveChanges();
             return RedirectToAction("IconList");
         }
+
+        public ActionResult DeleteIcon(Icon newicon)
+        {
+            Icon iconToDelete = context.Icons.Find(newicon.Id);
+            context.Icons.Remove(iconToDelete);
+            context.SaveChanges();
+            return RedirectToAction("IconList");
+        }
     }
 }
