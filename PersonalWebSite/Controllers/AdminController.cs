@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace PersonalWebSite.Controllers
 {
@@ -75,6 +76,12 @@ namespace PersonalWebSite.Controllers
             context.Icons.Remove(iconToDelete);
             context.SaveChanges();
             return RedirectToAction("IconList");
+        }
+
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
