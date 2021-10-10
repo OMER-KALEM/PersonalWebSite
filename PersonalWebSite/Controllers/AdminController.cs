@@ -53,5 +53,20 @@ namespace PersonalWebSite.Controllers
             context.SaveChanges();
             return RedirectToAction("IconList");
         }
+
+        public ActionResult GetIcon(int id)
+        {
+            var iconToUpdate = context.Icons.Find(id);
+            return View("GetIcon", iconToUpdate);
+        }
+
+        public ActionResult UpdateIcon(Icon newicon)
+        {
+            Icon iconToUpdate = context.Icons.Find(newicon.Id);
+            iconToUpdate.IconName = newicon.IconName;
+            iconToUpdate.Link = newicon.Link;
+            context.SaveChanges();
+            return RedirectToAction("IconList");
+        }
     }
 }

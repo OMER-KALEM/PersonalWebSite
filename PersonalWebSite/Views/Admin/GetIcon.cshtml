@@ -1,0 +1,24 @@
+﻿@model PersonalWebSite.Models.Classes.Icon
+@{
+    ViewBag.Title = "GetIcon";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4 mt-4">İkon Güncelle</h2>
+
+@using (Html.BeginForm("UpdateIcon", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(item => item.Id)
+    @Html.TextBoxFor(item => item.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    @Html.LabelFor(item => item.IconName)
+    @Html.TextBoxFor(item => item.IconName, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(item => item.Link)
+    @Html.TextBoxFor(item => item.Link, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Ikon Guncelle</button>
+}

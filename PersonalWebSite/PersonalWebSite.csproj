@@ -189,6 +189,7 @@
     <Content Include="Views\Admin\MainScreenBring.cshtml" />
     <Content Include="Views\Admin\IconList.cshtml" />
     <Content Include="Views\Admin\AddIcon.cshtml" />
+    <Content Include="Views\Admin\GetIcon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
