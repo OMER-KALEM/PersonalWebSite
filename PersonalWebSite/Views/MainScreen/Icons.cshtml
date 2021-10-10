@@ -1,0 +1,9 @@
+﻿@using PersonalWebSite.Models.Classes
+@model List<Icon>
+
+<div class="social">
+    @foreach (var item in Model)
+    {
+        <a href="@item.Link"><i class="@item.IconName"></i></a>
+    }
+</div>

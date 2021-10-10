@@ -17,5 +17,11 @@ namespace PersonalWebSite.Controllers
             var deger = context.MainScreens.ToList();
             return View(deger);
         }
+
+        public PartialViewResult Icons()
+        {
+            var deger = context.Icons.ToList();
+            return PartialView(deger);
+        }
     }
 }
