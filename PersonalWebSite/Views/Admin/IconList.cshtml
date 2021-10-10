@@ -1,0 +1,26 @@
+﻿@using PersonalWebSite.Models.Classes
+@model List<Icon>
+@{
+    ViewBag.Title = "IconList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Icon</th>
+        <th>Guncelle</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td><i class="@item.IconName"></i></td>
+            <td><a href="" class="btn btn-primary">Guncelle</a></td>
+            <td><a href="" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+
+</table>
