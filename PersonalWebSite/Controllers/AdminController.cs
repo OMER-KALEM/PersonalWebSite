@@ -39,5 +39,19 @@ namespace PersonalWebSite.Controllers
             var deger = context.Icons.ToList();
             return View(deger);
         }
+
+        [HttpGet]
+        public ActionResult AddIcon()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddIcon(Icon icon)
+        {
+            context.Icons.Add(icon);
+            context.SaveChanges();
+            return RedirectToAction("IconList");
+        }
     }
 }
