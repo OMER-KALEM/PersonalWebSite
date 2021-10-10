@@ -1,0 +1,37 @@
+﻿@model PersonalWebSite.Models.Classes.MainScreen
+@{
+    ViewBag.Title = "MainScreenBring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Ana Sayfa Güncelle</h2>
+<hr />
+
+@using (Html.BeginForm("MainScreenUpdate", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(item => item.Id)
+    @Html.TextBoxFor(item => item.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    @Html.LabelFor(item => item.Name)
+    @Html.TextBoxFor(item => item.Name, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(item => item.ProfilPhoto)
+    @Html.TextBoxFor(item => item.ProfilPhoto, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(item => item.JobTitle)
+    @Html.TextBoxFor(item => item.JobTitle, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(item => item.Explanation)
+    @Html.TextAreaFor(item => item.Explanation, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(item => item.Contact)
+    @Html.TextBoxFor(item => item.Contact, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Ana Sayfa Guncelle</button>
+}

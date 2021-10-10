@@ -16,5 +16,23 @@ namespace PersonalWebSite.Controllers
             var deger = context.MainScreens.ToList();
             return View(deger);
         }
+        public ActionResult MainScreenBring(int id)
+        {
+            MainScreen mainScreenBring = context.MainScreens.Find(id);
+            return View("MainScreenBring", mainScreenBring);
+        }
+        
+        public ActionResult MainScreenUpdate(MainScreen mainScreen)
+        {
+            MainScreen mainScreenBring = context.MainScreens.Find(mainScreen.Id);
+            mainScreenBring.Name = mainScreen.Name;
+            mainScreenBring.ProfilPhoto = mainScreen.ProfilPhoto;
+            mainScreenBring.JobTitle = mainScreen.JobTitle;
+            mainScreenBring.Explanation = mainScreen.Explanation;
+            mainScreenBring.Contact = mainScreen.Contact;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

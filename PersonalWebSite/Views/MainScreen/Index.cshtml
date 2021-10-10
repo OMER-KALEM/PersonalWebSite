@@ -17,7 +17,11 @@
 <body>
     <div class="center">
         <div class="avatar">
-            <img src="~/UserPanel/img/ProfilFoto.jpeg">
+            @foreach (var item in Model)
+            {
+                <img src="@item.ProfilPhoto">
+                //~/UserPanel/img/ProfilFoto.jpeg
+            }
         </div>
         <div class="content">
             @foreach (var item in Model)
