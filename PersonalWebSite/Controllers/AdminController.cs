@@ -12,6 +12,8 @@ namespace PersonalWebSite.Controllers
     {
         // GET: Admin
         Context context = new Context();
+
+        [Authorize]
         public ActionResult Index()
         {
             var deger = context.MainScreens.ToList();
